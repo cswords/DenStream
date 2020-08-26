@@ -95,7 +95,7 @@ for i_dataset, (dataset, algo_params) in enumerate(datasets):
     dbscan = cluster.DBSCAN(eps=params['eps'])
     denstream = DenStream(eps=0.3, lambd=0.1, beta=0.5, mu=11)
     affinity_propagation = cluster.AffinityPropagation(
-        damping=params['damping'], preference=params['preference'])
+        damping=params['damping'], preference=params['preference'], random_state=None)
     average_linkage = cluster.AgglomerativeClustering(
         linkage="average", affinity="cityblock",
         n_clusters=params['n_clusters'], connectivity=connectivity)
